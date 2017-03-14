@@ -2,7 +2,7 @@ FROM        buildpack-deps:jessie
 MAINTAINER  Nala Ginrut
 ENV         LANG C.UTF-8
 ENV         GUILE_VERSION 2.1.8
-RUN         apt-get update && apt-get build-deps guile-2.0 \
+RUN         apt-get update && apt-get build-dep guile-2.0 \
                            && rm -rf /var/lib/apt/lists/*
 
 RUN set -ex \
