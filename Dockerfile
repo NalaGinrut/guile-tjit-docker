@@ -2,7 +2,7 @@ FROM        buildpack-deps:jessie
 MAINTAINER  Nala Ginrut
 ENV         LANG C.UTF-8
 ENV         GUILE_VERSION 2.1.8
-RUN         echo "deb https://mirrors.ustc.edu.cn/debian testing main contrib non-free" >> /etc/apt/source.list
+RUN         echo "deb http://mirrors.ustc.edu.cn/debian testing main contrib non-free" > /etc/apt/source.list
 RUN         apt-get update && apt-get build-dep guile-2.0 \
                            && rm -rf /var/lib/apt/lists/*
 RUN set -ex \
