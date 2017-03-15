@@ -15,7 +15,7 @@ RUN set -ex \
 	&& wget -c https://github.com/NalaGinrut/guile-tjit/archive/tjit-2.1.8.975-1f6fc-rebase.tar.gz \
 	&& tar xvzf tjit-2.1.8.975-1f6fc-rebase.tar.gz \
 	&& rm -f tjit-2.1.8.975-1f6fc-rebase.tar.gz \
-	&& cd guile-tjit-tjit-2.1.8.975-1f6fc-rebase && ./configure --enable-lightning && make \
+	&& cd guile-tjit-tjit-2.1.8.975-1f6fc-rebase && ./autogen.sh && ./configure --enable-lightning && make \
 	&& make install
 
 CMD ["guile --tjit"]
