@@ -4,7 +4,7 @@ ENV         LANG C.UTF-8
 ENV         GUILE_VERSION 2.1.8
 RUN set -ex \
 	echo "deb http://mirrors.ustc.edu.cn/debian testing main contrib non-free" > /etc/apt/source.list
-	apt-get update && apt-get build-dep guile-2.0 && rm -rf /var/lib/apt/lists/*
+	&& apt-get update && apt-get build-dep guile-2.0 && rm -rf /var/lib/apt/lists/*
 RUN set -ex \
 	&& wget -c http://ftp.gnu.org/gnu/lightning/lightning-2.1.0.tar.gz \
 	&& tar xvzf lightning-2.1.0.tar.gz \
