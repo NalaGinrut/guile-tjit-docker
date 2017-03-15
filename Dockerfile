@@ -2,8 +2,8 @@ FROM        buildpack-deps:jessie
 MAINTAINER  Nala Ginrut
 ENV         LANG C.UTF-8
 ENV         GUILE_VERSION 2.1.8
-RUN     echo "deb http://mirrors.ustc.edu.cn/debian jessie main contrib non-free" >> /etc/apt/source.list \
-	&& echo "deb-src http://mirrors.ustc.edu.cn/debian jessie main contrib non-free" >> /etc/apt/source.list
+RUN     echo "deb http://mirrors.ustc.edu.cn/debian jessie main contrib non-free" >> /etc/apt/sources.list \
+	&& echo "deb-src http://mirrors.ustc.edu.cn/debian jessie main contrib non-free" >> /etc/apt/sources.list
 RUN     apt-get update && apt-get build-dep guile-2.0 && rm -rf /var/lib/apt/lists/*
 RUN set -ex \
 	&& wget -c http://ftp.gnu.org/gnu/lightning/lightning-2.1.0.tar.gz \
